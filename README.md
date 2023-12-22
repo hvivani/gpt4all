@@ -1,252 +1,109 @@
 <h1 align="center">GPT4All</h1>
-<p align="center">Demo, data and code to train an assistant-style large language model with ~800k GPT-3.5-Turbo Generations based on LLaMa</p>
+
+<p align="center">Open-source large language models that run locally on your CPU and nearly any GPU</p>
 
 <p align="center">
-<a href="https://s3.amazonaws.com/static.nomic.ai/gpt4all/2023_GPT4All_Technical_Report.pdf">:green_book: Technical Report</a>
+<a href="https://gpt4all.io">GPT4All Website and Models</a>
 </p>
 
 <p align="center">
-<a href="https://github.com/nomic-ai/pyllamacpp">:snake: Official Python Bindings</a>
+<a href="https://docs.gpt4all.io">GPT4All Documentation</a>
 </p>
 
 <p align="center">
-<a href="https://github.com/nomic-ai/gpt4all-ts">:computer: Official Typescript Bindings</a>
+<a href="https://discord.gg/mGZE39AS3e">Discord</a>
 </p>
 
 <p align="center">
 <a href="https://python.langchain.com/en/latest/modules/models/llms/integrations/gpt4all.html">🦜️🔗 Official Langchain Backend</a> 
 </p>
 
-
 <p align="center">
-<a href="https://discord.gg/mGZE39AS3e">Discord</a>
+GPT4All is made possible by our compute partner <a href="https://www.paperspace.com/">Paperspace</a>.
 </p>
 
+<p align="center">
+  <img width="600" height="365" src="https://user-images.githubusercontent.com/13879686/231876409-e3de1934-93bb-4b4b-9013-b491a969ebbc.gif">
+</p>
+<p align="center">
+Run on an M1 macOS Device (not sped up!)
+</p>
+
+## GPT4All: An ecosystem of open-source on-edge large language models.
+
+> [!IMPORTANT]
+> GPT4All v2.5.0 and newer only supports models in GGUF format (.gguf). Models used with a previous version of GPT4All (.bin extension) will no longer work.
+
+GPT4All is an ecosystem to run **powerful** and **customized** large language models that work locally on consumer grade CPUs and any GPU. Note that your CPU needs to support [AVX or AVX2 instructions](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions).
+
+Learn more in the [documentation](https://docs.gpt4all.io).
+
+A GPT4All model is a 3GB - 8GB file that you can download and plug into the GPT4All open-source ecosystem software. **Nomic AI** supports and maintains this software ecosystem to enforce quality and security alongside spearheading the effort to allow any person or enterprise to easily train and deploy their own on-edge large language models.
+
+### What's New ([Issue Tracker](https://github.com/orgs/nomic-ai/projects/2))
+- **October 19th, 2023**: GGUF Support Launches with Support for:
+    - Mistral 7b base model, an updated model gallery on [gpt4all.io](https://gpt4all.io), several new local code models including Rift Coder v1.5
+    - [Nomic Vulkan](https://blog.nomic.ai/posts/gpt4all-gpu-inference-with-vulkan) support for Q4_0, Q6 quantizations in GGUF.
+    - Offline build support for running old versions of the GPT4All Local LLM Chat Client.
+- **September 18th, 2023**: [Nomic Vulkan](https://blog.nomic.ai/posts/gpt4all-gpu-inference-with-vulkan) launches supporting local LLM inference on AMD, Intel, Samsung, Qualcomm and NVIDIA GPUs.
+- **August 15th, 2023**: GPT4All API launches allowing inference of local LLMs from docker containers.
+- **July 2023**: Stable support for LocalDocs, a GPT4All Plugin that allows you to privately and locally chat with your data.
 
 
+### Chat Client
+Run any GPT4All model natively on your home desktop with the auto-updating desktop chat client. See <a href="https://gpt4all.io">GPT4All Website</a> for a full list of open-source models you can run with this powerful desktop application.
 
+Direct Installer Links:
 
-![gpt4all-lora-demo](https://user-images.githubusercontent.com/13879686/228352356-de66ca7a-df70-474e-b929-2e3656165051.gif)
+* [macOS](https://gpt4all.io/installers/gpt4all-installer-darwin.dmg)
 
-Run on M1 Mac (not sped up!)
+* [Windows](https://gpt4all.io/installers/gpt4all-installer-win64.exe)
 
-# Try it yourself
+* [Ubuntu](https://gpt4all.io/installers/gpt4all-installer-linux.run)
 
-Here's how to get started with the CPU quantized GPT4All model checkpoint:
+Find the most up-to-date information on the [GPT4All Website](https://gpt4all.io/)
 
-1. Download the `gpt4all-lora-quantized.bin` file from [Direct Link](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-quantized.bin) or [[Torrent-Magnet]](https://tinyurl.com/gpt4all-lora-quantized).
-2. Clone this repository, navigate to `chat`, and place the downloaded file there.
-3. Run the appropriate command for your OS:
-   - M1 Mac/OSX: `cd chat;./gpt4all-lora-quantized-OSX-m1`
-   - Linux: `cd chat;./gpt4all-lora-quantized-linux-x86`
-   - Windows (PowerShell): `cd chat;./gpt4all-lora-quantized-win64.exe`
-   - Intel Mac/OSX: `cd chat;./gpt4all-lora-quantized-OSX-intel`
+### Chat Client building and running
 
-For custom hardware compilation, see our [llama.cpp](https://github.com/zanussbaum/gpt4all.cpp) fork.
+* Follow the visual instructions on the chat client [build_and_run](gpt4all-chat/build_and_run.md) page
 
------------
-Find all compatible models in the GPT4All Ecosystem section.
+### Bindings
 
-[Secret Unfiltered Checkpoint](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-unfiltered-quantized.bin) - [[Torrent]](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-unfiltered-quantized.bin.torrent)
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/python/README.md">:snake: Official Python Bindings</a> [![Downloads](https://static.pepy.tech/badge/gpt4all/week)](https://pepy.tech/project/gpt4all)
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/typescript">:computer: Official Typescript Bindings</a>
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/golang">:computer: Official GoLang Bindings</a>
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/csharp">:computer: Official C# Bindings</a>
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/java">:computer: Official Java Bindings</a>
 
-This model had all refusal to answer responses removed from training. Try it with:
-- `cd chat;./gpt4all-lora-quantized-OSX-m1 -m gpt4all-lora-unfiltered-quantized.bin`
+### Integrations
 
------------
-Note: the full model on GPU (16GB of RAM required) performs much better in our qualitative evaluations.
+* 🗃️ [Weaviate Vector Database](https://github.com/weaviate/weaviate) - [module docs](https://weaviate.io/developers/weaviate/modules/retriever-vectorizer-modules/text2vec-gpt4all)
 
-# Python Client
-## CPU Interface
-To run GPT4all in python, see the new [official Python bindings](https://github.com/nomic-ai/pyllamacpp).
+## Contributing
+GPT4All welcomes contributions, involvement, and discussion from the open source community!
+Please see CONTRIBUTING.md and follow the issues, bug reports, and PR markdown templates.
 
-The old bindings are still available but now deprecated. They will not work in a notebook environment.
-To get running using the python client with the CPU interface, first install the [nomic client](https://github.com/nomic-ai/nomic) using `pip install nomic`
-Then, you can use the following script to interact with GPT4All:
-```
-from nomic.gpt4all import GPT4All
-m = GPT4All()
-m.open()
-m.prompt('write me a story about a lonely computer')
-```
+Check project discord, with project owners, or through existing issues/PRs to avoid duplicate work.
+Please make sure to tag all of the above with relevant project identifiers or your contribution could potentially get lost.
+Example tags: `backend`, `bindings`, `python-bindings`, `documentation`, etc.
 
-## GPU Interface
-There are two ways to get up and running with this model on GPU.
-The setup here is slightly more involved than the CPU model.
-1. clone the nomic client [repo](https://github.com/nomic-ai/nomic) and run `pip install .[GPT4All]` in the home dir.
-2. run `pip install nomic` and install the additional deps from the wheels built [here](https://github.com/nomic-ai/nomic/tree/main/bin)
+## Technical Reports
 
-Once this is done, you can run the model on GPU with a script like the following:
-```
-from nomic.gpt4all import GPT4AllGPU
-m = GPT4AllGPU(LLAMA_PATH)
-config = {'num_beams': 2,
-          'min_new_tokens': 10,
-          'max_length': 100,
-          'repetition_penalty': 2.0}
-out = m.generate('write me a story about a lonely computer', config)
-print(out)
-```
-Where LLAMA_PATH is the path to a Huggingface Automodel compliant LLAMA model.
-Nomic is unable to distribute this file at this time.
-We are working on a GPT4All that does not have this limitation right now.
+<p align="center">
+<a href="https://gpt4all.io/reports/GPT4All_Technical_Report_3.pdf">:green_book: Technical Report 3: GPT4All Snoozy and Groovy </a>
+</p>
 
-You can pass any of the [huggingface generation config params](https://huggingface.co/docs/transformers/main_classes/text_generation#transformers.GenerationConfig) in the config.
+<p align="center">
+<a href="https://static.nomic.ai/gpt4all/2023_GPT4All-J_Technical_Report_2.pdf">:green_book: Technical Report 2: GPT4All-J </a>
+</p>
 
-# GPT4All Compatibility Ecosystem
-Edge models in the GPT4All Ecosystem. Please PR as the [community grows](https://huggingface.co/models?sort=modified&search=4bit).
-Feel free to convert this to a more structured table.
+<p align="center">
+<a href="https://s3.amazonaws.com/static.nomic.ai/gpt4all/2023_GPT4All_Technical_Report.pdf">:green_book: Technical Report 1: GPT4All</a>
+</p>
 
-- [gpt4all](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-quantized.bin) [[MD5 Signature](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-quantized-ggml.bin.md5)]
-   - [gpt4all-ggml-converted](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-quantized-ggml.bin) [[MD5 Signature](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-quantized-ggml.bin.md5)]
-- [gpt4all-unfiltered](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-unfiltered-quantized.bin) [[MD5 Signature](https://the-eye.eu/public/AI/models/nomic-ai/gpt4all/gpt4all-lora-unfiltered-quantized.bin.md5)]
-- [ggml-vicuna-7b-4bit](https://huggingface.co/eachadea/ggml-vicuna-7b-4bit)
-- [vicuna-13b-GPTQ-4bit-128g](https://huggingface.co/anon8231489123/vicuna-13b-GPTQ-4bit-128g)
-- [LLaMa-Storytelling-4Bit](https://huggingface.co/GamerUntouch/LLaMa-Storytelling-4Bit)
-
-
-# Roadmap
-## Short Term
- - <span style="color:green">(IN PROGRESS)</span> Train a GPT4All model based on GPTJ to alleviate llama distribution issues.
- - <span style="color:green">(IN PROGRESS)</span> Create improved CPU and GPU interfaces for this model.
- - <span style="color:red">(NOT STARTED)</span> Integrate llama.cpp bindings
- - <span style="color:red">(NOT STARTED)</span> Create a good conversational chat interface for the model.
- - <span style="color:red">(NOT STARTED)</span> Allow users to opt in and submit their chats for subsequent training runs
-
-## Medium Term
- - <span style="color:red">(NOT STARTED)</span> Integrate GPT4All with [Atlas](https://atlas.nomic.ai) to allow for document retrieval.
-   - BLOCKED by GPT4All based on GPTJ
- - <span style="color:red">(NOT STARTED)</span> Integrate GPT4All with Langchain.
- - <span style="color:green">(IN PROGRESS)</span> Build easy custom training scripts to allow users to fine tune models.
-
-## Long Term
- - <span style="color:red">(NOT STARTED)</span> Allow anyone to curate training data for subsequent GPT4All releases using Atlas.
- - <span style="color:green">(IN PROGRESS)</span> Democratize AI. 
-
-# Reproducibility
-
-Trained LoRa Weights:
-- gpt4all-lora (four full epochs of training):  https://huggingface.co/nomic-ai/gpt4all-lora
-- gpt4all-lora-epoch-2 (three full epochs of training) https://huggingface.co/nomic-ai/gpt4all-lora-epoch-2
-
-Raw Data:
-- [Training Data Without P3](https://huggingface.co/datasets/nomic-ai/gpt4all_prompt_generations)
-  - Explorer: https://atlas.nomic.ai/map/gpt4all_data_clean_without_p3
-- [Full Dataset with P3](https://huggingface.co/datasets/nomic-ai/gpt4all_prompt_generations_with_p3)
-  - Explorer: https://atlas.nomic.ai/map/gpt4all_data_clean
-
-We are not distributing a LLaMa 7B checkpoint.
-
-You can reproduce our trained model by doing the following:
-
-## Setup
-
-Clone the repo
-
-```
-git clone --recurse-submodules https://github.com/nomic-ai/gpt4all.git
-git submodule update --init
-```
-
-Setup the environment
-
-```
-python -m pip install -r requirements.txt
-
-cd transformers
-pip install -e . 
-
-cd ../peft
-pip install -e .
-```
-
-## Training
-
-```bash
-accelerate launch --dynamo_backend=inductor --num_processes=8 --num_machines=1 --machine_rank=0 --deepspeed_multinode_launcher standard --mixed_precision=bf16  --use_deepspeed --deepspeed_config_file=configs/deepspeed/ds_config.json train.py --config configs/train/finetune-7b.yaml
-```
-
-## Generate
-
-```bash
-python generate.py --config configs/generate/generate.yaml --prompt "Write a script to reverse a string in Python"
-```
-
-## Need Help?
-
-Join the <a href="https://discord.gg/kvmy6dQB"> Discord </a> and ask for help in `#gpt4all-help`
-
-# Sample Generations
-
-### Provide instructions for the given exercise. Leg Raises
->Leg Raises
->1. Stand with your feet shoulder-width apart and your knees slightly bent.
->2. Raise your arms straight out in front of you.
->3. Slowly bend your knees and raise your heels off the ground.
->4. Hold this position for a count of 3, then slowly lower your heels back to the ground.
->5. Repeat the exercise 10 times.
->6. Do not let your knees go beyond your toes.
->7. Keep your back straight and your abdominal muscles engaged.
->8. Do not let your hips sag or your back arch.
->9. Keep your arms straight and your elbows locked.
->10. Do not let your head drop or your shoulders rise.
->11. Breathe normally throughout the exercise.
->12. Rest for 30 seconds before repeating the exercise.
->13. Gradually increase the number of repetitions as you become stronger.
-
-
-### A color description has been provided. Find the CSS code associated with that color. A light red color with a medium light shade of pink
-
->The CSS code associated with the color provided is: #FF6347
-
-
-### Come up with an interesting idea for a new movie plot. Your plot should be described with a title and a summary.
-
->1. The title of your movie plot should be "The Last Stand". 2. The summary of your movie plot should be: A group of mercenaries are hired to protect a small town from a dangerous criminal who is on the run. However, the town's sheriff is not willing to let them take over and decides to take matters into his own hands.
-
-### Reverse a string in python.
-> In Python, you can reverse a list or tuple by using the reversed() function on it. Here's an example of how to use this method with strings: 
->    ```python
->   my_string = "Hello World" # Define your original string here
->   reversed_str = my_string[::-1]   # Use a slice and negative index for reverse order
->   print(reversed_str)     # Output will be reversed version of the inputted string.
-
-### List 10 dogs.
->1. Labrador Retriever
->2. Golden Retriever
->3. Beagle
->4. Poodle
->5. German Shepherd
->6. Bulldog
->7. Rottweiler
->8. Boxer
->9. Shih Tzu
->10. Pug
-
-### Write me a poem about the fall of Julius Ceasar into a ceasar salad in iambic pentameter. 
->The fall of Julius Ceasar into a ceasar salad
->In iambic pentameter,
->The mighty Roman emperor
->Fell into a salad of lettuce and croutons,
->His empire crumbling around him,
->As he was devoured by the hungry diners.
->The once mighty emperor
->Was now just a salad topping,
->His legacy reduced to a mere garnish,
->As he was consumed by the masses.
->The fall of Julius Ceasar into a ceasar salad,
->In iambic pentameter,
->Was a tragic end to a great man,
->Who had once ruled the world with an iron fist.
->But now, he was just a salad topping,
->His legacy reduced to a mere garnish,
->As he was consumed by the masses.
-    
-### What is a three word topic describing the following keywords: baseball, football, soccer: 
->Sports, athletics, games
-    
 ## Citation
 
-If you utilize this reposistory, models or data in a downstream project, please consider citing it with:
+If you utilize this repository, models or data in a downstream project, please consider citing it with:
 ```
 @misc{gpt4all,
   author = {Yuvanesh Anand and Zach Nussbaum and Brandon Duderstadt and Benjamin Schmidt and Andriy Mulyar},

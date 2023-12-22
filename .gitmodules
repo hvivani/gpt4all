@@ -1,6 +1,4 @@
-[submodule "transformers"]
-	path = transformers
-	url = https://github.com/huggingface/transformers.git
-[submodule "peft"]
-	path = peft
-	url = https://github.com/huggingface/peft.git
+[submodule "llama.cpp-mainline"]
+	path = gpt4all-backend/llama.cpp-mainline
+	url = https://github.com/nomic-ai/llama.cpp.git
+	branch = gguf

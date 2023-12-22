@@ -1,3 +1,9 @@
+*.arrow
+squad_*
+*sbert_embedded*
+*.pkl
+ckpts*
+.deepspeed_env
 *.jsonl
 *tar.gz
 ckpts**
@@ -167,3 +173,17 @@ cython_debug/
 # vs code
 .vscode
 *.bin
+
+.DS_Store
+
+# gpt4all-chat
+CMakeLists.txt.user
+gpt4all-chat/models/*
+build_*
+build-*
+
+# IntelliJ
+.idea/
+
+# LLM models
+*.gguf
