@@ -15,3 +15,6 @@ wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo tee /etc
 sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-jammy.list http://packages.lunarg.com/vulkan/lunarg-vulkan-jammy.list
 sudo apt update
 sudo apt  -y install vulkan-sdk
+
+#training libraries
+pip3 install transformers deepspeed accelerate datasets einops torchmetrics evaluate wandb peft nodelist-inflator sentencepiece jsonlines nomic scikit-learn matplotlib

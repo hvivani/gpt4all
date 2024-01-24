@@ -12,7 +12,7 @@ from collections import namedtuple
 from typing_extensions import Annotated
 
 import typer
-from gpt4all import GPT4All
+from gpt4all import GPT4All, Embed4All
 
 
 MESSAGES = [
