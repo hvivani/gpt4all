@@ -1,4 +1,8 @@
-# running the CLI
+#!/bin/bash
+
+set -e
+
+# setting up python env and running the CLI
 cd ~/gpt4all/gpt4all-bindings/python
 pip3 install --user -e .
 cd ../cli
